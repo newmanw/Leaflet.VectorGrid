@@ -1,7 +1,7 @@
 
 import Pbf from 'pbf';
 import {VectorTile} from 'vector-tile';
-import fetch from 'whatwg-fetch'
+import {fetch} from 'whatwg-fetch'
 import {} from 'abortcontroller-polyfill'
 /*
  * 🍂class VectorGrid.Protobuf
@@ -99,7 +99,7 @@ L.VectorGrid.Protobuf = L.VectorGrid.extend({
 		var currentZoom = zoom === coords.z;
 
 		var tileBounds = this._tileCoordsToBounds(coords);
-		var currentBounds = this._map.getBounds().overlaps(tileBounds); 
+		var currentBounds = this._map.getBounds().overlaps(tileBounds);
 
 		return currentZoom && currentBounds;
 
@@ -140,7 +140,7 @@ L.VectorGrid.Protobuf = L.VectorGrid.extend({
 
 			if (!response.ok || !this._isCurrentTile(coords)) {
 				return {layers:[]};
-			} 
+			}
 
 			return response.blob().then( function (blob) {
 
@@ -183,4 +183,3 @@ L.VectorGrid.Protobuf = L.VectorGrid.extend({
 L.vectorGrid.protobuf = function (url, options) {
 	return new L.VectorGrid.Protobuf(url, options);
 };
-
