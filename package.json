@@ -47,7 +47,7 @@
     "topojson-client": "^2.1.0",
     "vector-tile": "^1.3.0",
     "abortcontroller-polyfill": "1.1.2",
-    "whatwg-fetch": "git://github.com/furstenheim/fetch#ded80814065be1871d21626d76653038abfca597"
+    "whatwg-fetch": "2.0.4"
   },
   "peerDependencies": {
     "leaflet": "^1.0.2"
