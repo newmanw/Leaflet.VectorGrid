@@ -174,6 +174,7 @@ var PointSymbolizer = L.CircleMarker.extend({
 	},
 
 	initialize: function(feature, pxPerExtent) {
+		this.setLatLng([feature.geometry.coordinates[1], feature.geometry.coordinates[0]]);
 		this.properties = feature.properties;
 		this._makeFeatureParts(feature, pxPerExtent);
 	},
