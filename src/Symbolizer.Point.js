@@ -14,7 +14,6 @@ export var PointSymbolizer = L.CircleMarker.extend({
 	},
 
 	initialize: function(feature, pxPerExtent) {
-		this.setLatLng([feature.geometry.coordinates[1], feature.geometry.coordinates[0]]);
 		this.properties = feature.properties;
 		this._makeFeatureParts(feature, pxPerExtent);
 	},
@@ -24,6 +23,8 @@ export var PointSymbolizer = L.CircleMarker.extend({
 		this._radius = style.radius || L.CircleMarker.prototype.options.radius;
 		this._updatePath();
 	},
+   
+        getLatLng: undefined,
 
 	_makeFeatureParts: function(feat, pxPerExtent) {
 		var coord = feat.geometry[0];
